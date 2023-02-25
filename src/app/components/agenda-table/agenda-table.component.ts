@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Agenda } from '../model/agenda.model';
+import { Agenda } from '../../model/agenda.model';
 
 @Component({
   selector: 'app-agenda-table',

@@ -116,11 +116,12 @@
 
 <div class="content" role="main">
 <!--  primeng sidebar -->
-  <p-sidebar [(visible)]="sideBarVisible" [baseZIndex]="1000000" [showCloseIcon]="true" [modal]="false" >
-    <h2>Agenda</h2>
-    <p-divider></p-divider>
-    <p-menu [model]="sideBarContent"></p-menu>
-  </p-sidebar>
+<!--  <p-sidebar [(visible)]="sideBarVisible" [baseZIndex]="0" [showCloseIcon]="true" [modal]="false" >-->
+<!--    <h2>Agenda</h2>-->
+<!--    <p-divider></p-divider>-->
+<!--    <p-menu [model]="sideBarContent"></p-menu>-->
+<!--  </p-sidebar>-->
+  <app-sidebar></app-sidebar>
  <router-outlet></router-outlet>
 </div>
 

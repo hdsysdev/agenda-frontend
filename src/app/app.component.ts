@@ -8,7 +8,7 @@ import {MenuItem} from "primeng/api";
 })
 export class AppComponent {
   title = 'agenda-frontend';
-  sideBarVisible = false;
+  sideBarVisible = true;
 
   sideBarContent: MenuItem[] = [
     {label: 'Home', icon: 'pi pi-fw pi-home'},

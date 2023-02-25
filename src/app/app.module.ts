@@ -1,4 +1,4 @@
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,20 +10,19 @@ import { SidebarModule } from "primeng/sidebar";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {DividerModule} from "primeng/divider";
 import {MenuModule} from "primeng/menu";
-import { AgendaTableComponent } from './agenda-table/agenda-table.component';
+import { AgendaTableComponent } from './components/agenda-table/agenda-table.component';
 import { RouterModule, Routes } from '@angular/router';
 import {TreeTableModule} from 'primeng/treetable';
-
-const ROUTES: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: '**', redirectTo: 'home'}
-];
+import { AgendaViewerPageComponent } from './pages/agenda-viewer-page/agenda-viewer-page.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AgendaTableComponent,
     HomeComponent,
+    AgendaViewerPageComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +33,6 @@ const ROUTES: Routes = [
     DividerModule,
     MenuModule,
     TreeTableModule,
-    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

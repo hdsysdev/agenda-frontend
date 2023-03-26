@@ -19,9 +19,11 @@ import {DropdownModule} from "primeng/dropdown";
 import {TableModule} from "primeng/table";
 import {CalendarModule} from "primeng/calendar";
 import {DialogModule} from "primeng/dialog";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { AgendaInfoDescriptionComponent } from './components/agenda-info-description/agenda-info-description.component';
+import {ConfirmDialogModule} from "primeng/confirmdialog";
+import {ConfirmationService} from "primeng/api";
 
 @NgModule({
   declarations: [
@@ -48,8 +50,12 @@ import { AgendaInfoDescriptionComponent } from './components/agenda-info-descrip
     DialogModule,
     FormsModule,
     ChipModule,
+    ConfirmDialogModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    ConfirmationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

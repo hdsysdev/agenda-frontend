@@ -11,10 +11,15 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {DividerModule} from "primeng/divider";
 import {MenuModule} from "primeng/menu";
 import { AgendaTableComponent } from './components/agenda-table/agenda-table.component';
-import { RouterModule, Routes } from '@angular/router';
 import {TreeTableModule} from 'primeng/treetable';
 import { AgendaViewerPageComponent } from './pages/agenda-viewer-page/agenda-viewer-page.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import {DropdownModule} from "primeng/dropdown";
+import {TableModule} from "primeng/table";
+import {CalendarModule} from "primeng/calendar";
+import {DialogModule} from "primeng/dialog";
+import {FormsModule} from "@angular/forms";
+import { SideNavComponent } from './components/side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     AgendaTableComponent,
     HomeComponent,
     AgendaViewerPageComponent,
-    SidebarComponent,
+    DashboardComponent,
+    SideNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +39,11 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     DividerModule,
     MenuModule,
     TreeTableModule,
+    DropdownModule,
+    TableModule,
+    CalendarModule,
+    DialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

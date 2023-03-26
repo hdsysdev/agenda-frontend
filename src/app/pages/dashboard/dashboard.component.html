@@ -1,0 +1,58 @@
+<div class="p-grid p-nogutter m-8">
+  <div class="p-col">
+    <div class="p-toolbar">
+      <div class="p-toolbar-group-left">
+        <h3>Meeting Agendas</h3>
+      </div>
+      <div class="p-toolbar-group-right">
+        <button pButton type="button" label="Add Agenda" icon="pi pi-plus" (click)="showAddAgendaDialog()"></button>
+      </div>
+    </div>
+    <p-table [value]="agendas">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Title</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-agenda>
+        <tr>
+          <td>{{ agenda.title }}</td>
+          <td>{{ agenda.date | date:'shortDate' }}</td>
+          <td>{{ agenda.time | date:'shortTime' }}</td>
+          <td>{{ agenda.status }}</td>
+          <td>
+            <button pButton type="button" icon="pi pi-trash" class="p-button-danger" (click)="deleteAgenda(agenda)"></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <p-dialog header="Add Agenda" [(visible)]="addAgendaVisible" [modal]="true" [style]="{width: '30vw'}">
+      <div class="p-fluid">
+        <div class="p-field">
+          <label for="title">Title</label>
+          <input id="title" type="text" [(ngModel)]="newAgenda.title" pInputText>
+        </div>
+        <div class="p-field">
+          <label for="date">Date</label>
+          <p-calendar id="date" [(ngModel)]="newAgenda.date" dateFormat="mm/dd/yy"></p-calendar>
+        </div>
+        <div class="p-field">
+          <label for="time">Time</label>
+          <p-calendar id="time" [(ngModel)]="newAgenda.time" [showTime]="true" hourFormat="12"></p-calendar>
+        </div>
+        <div class="p-field">
+          <label for="status">Status</label>
+          <p-dropdown id="status" [(ngModel)]="newAgenda.status" [options]="statuses"></p-dropdown>
+        </div>
+      </div>
+      <p-footer>
+        <button pButton type="button" label="Add" icon="pi pi-check" (click)="addAgenda()"></button>
+        <button pButton type="button" label="Cancel" icon="pi pi-times" class="p-button-secondary" (click)="cancelAddAgenda()"></button>
+      </p-footer>
+    </p-dialog>
+  </div>
+</div>

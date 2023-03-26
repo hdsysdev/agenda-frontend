@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ButtonModule } from "primeng/button";
+import { ChipModule } from "primeng/chip";
 import { SidebarModule } from "primeng/sidebar";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {DividerModule} from "primeng/divider";
@@ -20,6 +21,7 @@ import {CalendarModule} from "primeng/calendar";
 import {DialogModule} from "primeng/dialog";
 import {FormsModule} from "@angular/forms";
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { AgendaInfoDescriptionComponent } from './components/agenda-info-description/agenda-info-description.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     AgendaViewerPageComponent,
     DashboardComponent,
     SideNavComponent,
+    AgendaInfoDescriptionComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     TableModule,
     CalendarModule,
     DialogModule,
-    FormsModule
+    FormsModule,
+    ChipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
